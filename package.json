@@ -1,0 +1,21 @@
+{
+  "name": "parallel-lines",
+  "version": "1.0.0",
+  "description": "A demo about drawing parallel lines on a map",
+  "main": "server.js",
+  "scripts": {
+    "build": "npx @11ty/eleventy",
+    "start": "rm -rf dist && npx @11ty/eleventy --serve --port=3000"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^0.10.0",
+    "@11ty/eleventy-plugin-rss": "^1.0.7"
+  },
+  "engines": {
+    "node": "14.x"
+  },
+  "repository": {
+    "url": "https://github.com/patrickweaver/parallel-lines"
+  },
+  "license": "MIT"
+}
