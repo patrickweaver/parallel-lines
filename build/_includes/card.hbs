@@ -1,8 +1,8 @@
 <div id="card">
 
   <ul id="nav">
-    <li><a href="/{{prevSlide page.url }}">Previous</a></li>
-    <li><a href="/{{nextSlide page.url }}">Next</a></li>
+    <li>{{{ prevSlide page.url }}}</li>
+    <li>{{{ nextSlide page.url collections.slides }}}</li>
   </ul>
 
   <h2>{{ this.cardTitle}}</h2>

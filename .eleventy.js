@@ -7,11 +7,22 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("build/*/*.js");
 
   eleventyConfig.addShortcode("prevSlide", function(inputPath) {
-    return parseInt(inputPath.split("/")[1]) - 1
+    const currentPage = parseInt(inputPath.split("/")[2])
+    if (currentPage < 2) {
+      return "";
+    }
+    return `<a href="/slides/${currentPage - 1}/">Previous</a>`;
   });
 
-  eleventyConfig.addShortcode("nextSlide", function(inputPath) {
-    return parseInt(inputPath.split("/")[1]) + 1;
+  eleventyConfig.addShortcode("nextSlide", function(inputPath, slides) {
+    const currentPage = parseInt(inputPath.split("/")[2])
+    const nextSlideUrl = `/slides/${currentPage + 1}/`
+    const slideUrls = slides.map(s => s.url);
+    
+    if (slideUrls.indexOf(nextSlideUrl) === -1 ) {
+      return "";
+    }
+    return `<a href="${nextSlideUrl}">Next</a>`;
   });
 
   return {
