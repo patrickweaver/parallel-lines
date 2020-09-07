@@ -44,5 +44,17 @@ img {
 }
 
 button {
-  margin: 20px;
+  font-size: 16px;
+  margin: 20px 5px 20px 0;
+}
+
+.button-list {
+  text-align: left;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0 20px;
+}
+
+.button-list li {
+  margin-right: 30px;
 }

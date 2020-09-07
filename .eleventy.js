@@ -4,7 +4,7 @@ module.exports = function(eleventyConfig) {
     dynamicPartials: true,
     strict_filters: true
   });
-  eleventyConfig.addPassthroughCopy("build/*/*.js");
+  eleventyConfig.addPassthroughCopy("build/*/*/*.js");
 
   eleventyConfig.addShortcode("prevSlide", function(inputPath) {
     const currentPage = parseInt(inputPath.split("/")[2])
