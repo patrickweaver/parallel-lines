@@ -13,18 +13,19 @@ module.exports = function(eleventyConfig) {
     if (isNaN(currentPage) || currentPage < 2) {
       return "";
     }
-    return `<a href="/slides/${currentPage - 1}/">Previous</a>`;
+    return `<a href="../${currentPage - 1}/">Previous</a>`;
   });
 
   eleventyConfig.addShortcode("nextSlide", function(inputPath, slides) {
     const currentPage = parseInt(inputPath.split("/")[2])
     const nextSlideUrl = `/slides/${currentPage + 1}/`
+    const nextSlideRelUrl = `../${currentPage + 1}/`
     const slideUrls = slides.map(s => s.url);
     
     if (slideUrls.indexOf(nextSlideUrl) === -1 ) {
       return "";
     }
-    return `<a href="${nextSlideUrl}">Next</a>`;
+    return `<a href="${nextSlideRelUrl}">Next</a>`;
   });
 
   return {

@@ -1,5 +1,5 @@
 ---
-layout: layouts/slide.hbs
+layout: layouts/slideIndex.hbs
 title: Parallel Lines by Patrick Weaver
 ---
 
@@ -8,7 +8,7 @@ title: Parallel Lines by Patrick Weaver
 <ol class="slides-list">
 {{#each collections.slides }}
   <li>
-    <a href="{{this.url}}">{{this.data.cardTitle}}</a>
+    <a href=".{{this.url}}">{{this.data.cardTitle}}</a>
   </li>
 {{/each}}
 </ol>
