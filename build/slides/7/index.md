@@ -1,6 +1,6 @@
 ---
 layout: layouts/slide.hbs
-title: "Slide 7: Parallel Lines by Patrick Weaver"
+title: "Slide 7: Drawing Parallel Lines on a Map by Patrick Weaver"
 cardTitle: "Using Vectors Instead"
 ---
 

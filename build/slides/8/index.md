@@ -1,6 +1,6 @@
 ---
 layout: layouts/slide.hbs
-title: "Slide 8: Parallel Lines by Patrick Weaver"
+title: "Slide 8: Drawing Parallel Lines on a Map by Patrick Weaver"
 cardTitle: "Drawing Parallel-ish Tracks"
 ---
 

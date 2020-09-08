@@ -1,6 +1,6 @@
 ---
 layout: layouts/slide.hbs
-title: "Slide 6: Parallel Lines by Patrick Weaver"
+title: "Slide 6: Drawing Parallel Lines on a Map by Patrick Weaver"
 cardTitle: "Which angle is correct?"
 ---
 
