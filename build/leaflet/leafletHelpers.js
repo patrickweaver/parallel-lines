@@ -16,7 +16,8 @@ const markers = {
     color: 'white',
     fillColor: 'black',
     fillOpacity: 1,
-    radius: 150,
+    radius: 100,
+    weight: 2,
   }
 }
 
@@ -145,7 +146,6 @@ function drawTracks(stationA, stationB, stationC) {
 }
 
 function drawVectorTracks(stationA, stationB, color) {
-  console.log({stationA, stationB})
   // Draw offset line for station B
   L.polyline(stationB.offsets, { color: "#00fff2" }).addTo(map); // Aqua
 
@@ -154,20 +154,18 @@ function drawVectorTracks(stationA, stationB, color) {
   L.circle(stationB.offsets[1], {radius: 20, color: "yellow"}).addTo(map);
   
   //Draw lines between offsets:
-  L.polyline([stationA.offsets[0], stationB.offsets[0]], { color: color }).addTo(map);
-  L.polyline([stationA.offsets[1], stationB.offsets[1]], { color: color }).addTo(map);
+  L.polyline([stationA.offsets[0], stationB.offsets[0]], { color: color, weight: 2 }).addTo(map);
+  L.polyline([stationA.offsets[1], stationB.offsets[1]], { color: color, weight: 2 }).addTo(map);
 }
 
 
 function drawTrain(lat, lng) {
-  console.log("DRAWING")
   const trainPosition = [lat, lng];
   const trainMarker = L.circle(trainPosition, markers.trainCircle).addTo(map);
   return trainMarker;
 }
 
 function moveTrain(marker, destinations, totalDuration) {
-  console.log("🛎 Moving train");
   const numberOfDestinations = destinations.length;
   const durationEach = totalDuration / numberOfDestinations;
 
@@ -206,7 +204,7 @@ function offsetFromPoint(pointLat, pointLng, normalizedOffsetMetersX, normalized
 
 function findOffsetPoints(stationA, stationB, stationC) {
   // Length of offset line
-  const offsetLength = 20;
+  const offsetLength = 70;
 
   const pos = {};
   pos.a = stationA ? [stationA.latitude, stationA.longitude] : null;

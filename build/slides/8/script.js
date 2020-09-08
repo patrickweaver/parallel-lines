@@ -1,7 +1,9 @@
-var MAP_CENTER = [40.666271, -73.980305];
-var MAP_ZOOM = 16;
+var MAP_CENTER = [40.694568, -73.949046];
+var MAP_ZOOM = 12;
 
 drawMap("map");
+
+var t1, t2;
 
 const gLine = [
   [40.746554, -73.943832],
@@ -32,7 +34,13 @@ const gLine = [
 for (var i = 0; i < gLine.length - 1; i++) {
   const sA = gLine[i];
   const sB = gLine[i + 1];
-  L.polyline([sA, sB], {color: 'limeGreen', weight: 7}).addTo(map);
+  L.circle([gLine[i][0], gLine[i][1]], {
+    color: '#9cb48b',
+    fillColor: '#73CCA3',
+    fillOpacity: 1,
+    radius: 90,
+  }).addTo(map);
+  //L.polyline([sA, sB], {color: 'limeGreen', weight: 2}).addTo(map);
 }
 
 
@@ -80,3 +88,19 @@ stationsWithOffsets.forEach((i, index) => {
     drawVectorTracks(prevStation, i, "green");
   }
 })
+
+function addTrains() {
+  const swol = stationsWithOffsets.length;
+  t1 = drawTrain(stationsWithOffsets[0].nOffset[0], stationsWithOffsets[0].nOffset[1]);
+  t2 = drawTrain(stationsWithOffsets[swol - 1].sOffset[0], stationsWithOffsets[swol - 1].sOffset[1]);
+}
+
+function moveTrains() {
+  const swol = stationsWithOffsets.length;
+  const t1IntStops = stationsWithOffsets.slice(1, swol).map(i => i.offsets[0]);
+  //const t2IntStops = stationsWithOffsets.slice(1, swol).map(i => i.sOffset);
+  //console.log({t1IntStops, t2IntStops})
+  const t2IntStops = stationsWithOffsets.slice(0, swol - 1).reverse().map(i => i.offsets[1]);
+  moveTrain(t1, t1IntStops, 7000);
+  moveTrain(t2, t2IntStops, 7000);
+}

@@ -1,1 +1,0 @@
-drawMap("map")

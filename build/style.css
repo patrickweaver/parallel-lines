@@ -38,6 +38,10 @@ body {
   padding: 0;
 }
 
+.slides-list li {
+  padding: .125em 0;
+}
+
 .slides-list {
   text-align: left;
 }

@@ -86,7 +86,7 @@ function drawBisector(station1, station2, station3) {
   
   const fullAngle1 = h + f + (Math.PI / 2);
   const fullAngle2 = e + h;
-  
+
   const offsetAngle1 = (f - h + (Math.PI / 2)) / 2; // angle a
   const offsetAngle3 = -((f - h + (Math.PI / 2)) / 2); // negative angle a
   
