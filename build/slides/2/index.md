@@ -1,6 +1,6 @@
 ---
 layout: layouts/slide.hbs
-title: "Slide 2: Drawing Parallel Lines on a Map by Patrick Weaver"
+title: "Slide 2: Drawing Parallel Lines on a Map"
 cardTitle: "Trying to Draw Parallel Lines on a Map"
 ---
 
