@@ -38,8 +38,16 @@ body {
   padding: 0;
 }
 
+.slides-list {
+  text-align: left;
+}
+
+.image-container {
+  text-align: center;
+}
+
 img {
-  max-height: 80vh;
+  max-height: 60vh;
   margin: 0 auto;
 }
 

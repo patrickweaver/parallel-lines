@@ -4,11 +4,13 @@ module.exports = function(eleventyConfig) {
     dynamicPartials: true,
     strict_filters: true
   });
-  eleventyConfig.addPassthroughCopy("build/*/*/*.js");
+  eleventyConfig.addPassthroughCopy("build/*.js");
+  eleventyConfig.addPassthroughCopy("build/slides/*/*.js");
+  eleventyConfig.addPassthroughCopy("build/leaflet/*.js");
 
   eleventyConfig.addShortcode("prevSlide", function(inputPath) {
     const currentPage = parseInt(inputPath.split("/")[2])
-    if (currentPage < 2) {
+    if (isNaN(currentPage) || currentPage < 2) {
       return "";
     }
     return `<a href="/slides/${currentPage - 1}/">Previous</a>`;
