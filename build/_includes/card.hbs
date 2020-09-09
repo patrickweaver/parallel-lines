@@ -6,7 +6,15 @@
     <li>{{{ nextSlide page.url collections.slides }}}</li>
   </ul>
 
+  
   <h2>{{ this.cardTitle}}</h2>
-  <p>{{{ content }}}</p>
+  <div id="card-content">
+    <p>{{{ content }}}</p>
+  </div>
+
+  <div id="responsive">
+    <button id="hide-card" onclick="hideCard()">Hide Card</button>
+    <button id="show-card" onclick="showCard()">Show Card</button>
+  </div>
 </div>
 
