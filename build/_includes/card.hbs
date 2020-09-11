@@ -7,9 +7,9 @@
   </ul>
 
   
-  <h2>{{ this.cardTitle}}</h2>
+  {{#if this.cardTitle}}<h2 class="card-title">{{ this.cardTitle}}</h2>{{/if}}
   <div id="card-content">
-    <p>{{{ content }}}</p>
+    {{{ content }}}
   </div>
 
   <div id="responsive">
