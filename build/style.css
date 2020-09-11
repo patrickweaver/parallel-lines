@@ -76,9 +76,10 @@ button {
 }
 
 #responsive-disclaimer {
-  text-align: left !important;
+  text-align: left;
   display: none;
   margin-top: 10px;
+  padding: 0 10px;
 }
 
 #responsive button {
@@ -89,7 +90,7 @@ button {
   display: none;
 }
 
-#responsive-disclaimer {
+#responsive {
   display: none;
 }
 
@@ -100,8 +101,7 @@ button {
   }
 
   #responsive-disclaimer {
-    display: inline;
-    text-align: left !important;
+    display: block;
   }
 
   #card {
